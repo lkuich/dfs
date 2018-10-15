@@ -7,45 +7,45 @@
 
 using grpc = global::Grpc.Core;
 
-namespace IO {
+namespace GIO {
   public static partial class File
   {
-    static readonly string __ServiceName = "IO.File";
+    static readonly string __ServiceName = "GIO.File";
 
-    static readonly grpc::Marshaller<global::IO.ReadRequest> __Marshaller_IO_ReadRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::IO.ReadRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::IO.ReadResponse> __Marshaller_IO_ReadResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::IO.ReadResponse.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::IO.WriteRequest> __Marshaller_IO_WriteRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::IO.WriteRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::IO.WriteResponse> __Marshaller_IO_WriteResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::IO.WriteResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GIO.ReadRequest> __Marshaller_GIO_ReadRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GIO.ReadRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GIO.ReadResponse> __Marshaller_GIO_ReadResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GIO.ReadResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GIO.WriteRequest> __Marshaller_GIO_WriteRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GIO.WriteRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GIO.WriteResponse> __Marshaller_GIO_WriteResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GIO.WriteResponse.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::IO.ReadRequest, global::IO.ReadResponse> __Method_ReadAllBytes = new grpc::Method<global::IO.ReadRequest, global::IO.ReadResponse>(
+    static readonly grpc::Method<global::GIO.ReadRequest, global::GIO.ReadResponse> __Method_ReadAllBytes = new grpc::Method<global::GIO.ReadRequest, global::GIO.ReadResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ReadAllBytes",
-        __Marshaller_IO_ReadRequest,
-        __Marshaller_IO_ReadResponse);
+        __Marshaller_GIO_ReadRequest,
+        __Marshaller_GIO_ReadResponse);
 
-    static readonly grpc::Method<global::IO.WriteRequest, global::IO.WriteResponse> __Method_WriteAllBytes = new grpc::Method<global::IO.WriteRequest, global::IO.WriteResponse>(
+    static readonly grpc::Method<global::GIO.WriteRequest, global::GIO.WriteResponse> __Method_WriteAllBytes = new grpc::Method<global::GIO.WriteRequest, global::GIO.WriteResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "WriteAllBytes",
-        __Marshaller_IO_WriteRequest,
-        __Marshaller_IO_WriteResponse);
+        __Marshaller_GIO_WriteRequest,
+        __Marshaller_GIO_WriteResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::IO.IoReflection.Descriptor.Services[0]; }
+      get { return global::GIO.IoReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of File</summary>
     public abstract partial class FileBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::IO.ReadResponse> ReadAllBytes(global::IO.ReadRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GIO.ReadResponse> ReadAllBytes(global::GIO.ReadRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::IO.WriteResponse> WriteAllBytes(global::IO.WriteRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GIO.WriteResponse> WriteAllBytes(global::GIO.WriteRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -75,35 +75,35 @@ namespace IO {
       {
       }
 
-      public virtual global::IO.ReadResponse ReadAllBytes(global::IO.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::GIO.ReadResponse ReadAllBytes(global::GIO.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ReadAllBytes(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::IO.ReadResponse ReadAllBytes(global::IO.ReadRequest request, grpc::CallOptions options)
+      public virtual global::GIO.ReadResponse ReadAllBytes(global::GIO.ReadRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ReadAllBytes, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::IO.ReadResponse> ReadAllBytesAsync(global::IO.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::GIO.ReadResponse> ReadAllBytesAsync(global::GIO.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ReadAllBytesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::IO.ReadResponse> ReadAllBytesAsync(global::IO.ReadRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::GIO.ReadResponse> ReadAllBytesAsync(global::GIO.ReadRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ReadAllBytes, null, options, request);
       }
-      public virtual global::IO.WriteResponse WriteAllBytes(global::IO.WriteRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::GIO.WriteResponse WriteAllBytes(global::GIO.WriteRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return WriteAllBytes(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::IO.WriteResponse WriteAllBytes(global::IO.WriteRequest request, grpc::CallOptions options)
+      public virtual global::GIO.WriteResponse WriteAllBytes(global::GIO.WriteRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_WriteAllBytes, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::IO.WriteResponse> WriteAllBytesAsync(global::IO.WriteRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::GIO.WriteResponse> WriteAllBytesAsync(global::GIO.WriteRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return WriteAllBytesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::IO.WriteResponse> WriteAllBytesAsync(global::IO.WriteRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::GIO.WriteResponse> WriteAllBytesAsync(global::GIO.WriteRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_WriteAllBytes, null, options, request);
       }

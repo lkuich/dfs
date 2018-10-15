@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace IO {
+namespace GIO {
 
   /// <summary>Holder for reflection information generated from io.proto</summary>
   public static partial class IoReflection {
@@ -24,20 +24,20 @@ namespace IO {
     static IoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cghpby5wcm90bxICSU8iGwoLUmVhZFJlcXVlc3QSDAoEcGF0aBgBIAEoCSIw",
-            "CgxSZWFkUmVzcG9uc2USEQoJc3VjY2VlZGVkGAEgASgIEg0KBWJ5dGVzGAIg",
-            "ASgMIisKDFdyaXRlUmVxdWVzdBIMCgRwYXRoGAEgASgJEg0KBWJ5dGVzGAIg",
-            "ASgMIiIKDVdyaXRlUmVzcG9uc2USEQoJc3VjY2VlZGVkGAEgASgIMnMKBEZp",
-            "bGUSMwoMUmVhZEFsbEJ5dGVzEg8uSU8uUmVhZFJlcXVlc3QaEC5JTy5SZWFk",
-            "UmVzcG9uc2UiABI2Cg1Xcml0ZUFsbEJ5dGVzEhAuSU8uV3JpdGVSZXF1ZXN0",
-            "GhEuSU8uV3JpdGVSZXNwb25zZSIAYgZwcm90bzM="));
+            "Cghpby5wcm90bxIDR0lPIhsKC1JlYWRSZXF1ZXN0EgwKBHBhdGgYASABKAki",
+            "LgoMUmVhZFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDQoFYnl0ZXMYAiAB",
+            "KAwiKwoMV3JpdGVSZXF1ZXN0EgwKBHBhdGgYASABKAkSDQoFYnl0ZXMYAiAB",
+            "KAwiIAoNV3JpdGVSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIMncKBEZpbGUS",
+            "NQoMUmVhZEFsbEJ5dGVzEhAuR0lPLlJlYWRSZXF1ZXN0GhEuR0lPLlJlYWRS",
+            "ZXNwb25zZSIAEjgKDVdyaXRlQWxsQnl0ZXMSES5HSU8uV3JpdGVSZXF1ZXN0",
+            "GhIuR0lPLldyaXRlUmVzcG9uc2UiAGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::IO.ReadRequest), global::IO.ReadRequest.Parser, new[]{ "Path" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IO.ReadResponse), global::IO.ReadResponse.Parser, new[]{ "Succeeded", "Bytes" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IO.WriteRequest), global::IO.WriteRequest.Parser, new[]{ "Path", "Bytes" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IO.WriteResponse), global::IO.WriteResponse.Parser, new[]{ "Succeeded" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadRequest), global::GIO.ReadRequest.Parser, new[]{ "Path" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadResponse), global::GIO.ReadResponse.Parser, new[]{ "Success", "Bytes" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.WriteRequest), global::GIO.WriteRequest.Parser, new[]{ "Path", "Bytes" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.WriteResponse), global::GIO.WriteResponse.Parser, new[]{ "Success" }, null, null, null)
           }));
     }
     #endregion
@@ -55,7 +55,7 @@ namespace IO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IO.IoReflection.Descriptor.MessageTypes[0]; }
+      get { return global::GIO.IoReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -184,7 +184,7 @@ namespace IO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IO.IoReflection.Descriptor.MessageTypes[1]; }
+      get { return global::GIO.IoReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -201,7 +201,7 @@ namespace IO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ReadResponse(ReadResponse other) : this() {
-      succeeded_ = other.succeeded_;
+      success_ = other.success_;
       bytes_ = other.bytes_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -211,14 +211,14 @@ namespace IO {
       return new ReadResponse(this);
     }
 
-    /// <summary>Field number for the "succeeded" field.</summary>
-    public const int SucceededFieldNumber = 1;
-    private bool succeeded_;
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Succeeded {
-      get { return succeeded_; }
+    public bool Success {
+      get { return success_; }
       set {
-        succeeded_ = value;
+        success_ = value;
       }
     }
 
@@ -246,7 +246,7 @@ namespace IO {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Succeeded != other.Succeeded) return false;
+      if (Success != other.Success) return false;
       if (Bytes != other.Bytes) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -254,7 +254,7 @@ namespace IO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Succeeded != false) hash ^= Succeeded.GetHashCode();
+      if (Success != false) hash ^= Success.GetHashCode();
       if (Bytes.Length != 0) hash ^= Bytes.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -269,9 +269,9 @@ namespace IO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Succeeded != false) {
+      if (Success != false) {
         output.WriteRawTag(8);
-        output.WriteBool(Succeeded);
+        output.WriteBool(Success);
       }
       if (Bytes.Length != 0) {
         output.WriteRawTag(18);
@@ -285,7 +285,7 @@ namespace IO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Succeeded != false) {
+      if (Success != false) {
         size += 1 + 1;
       }
       if (Bytes.Length != 0) {
@@ -302,8 +302,8 @@ namespace IO {
       if (other == null) {
         return;
       }
-      if (other.Succeeded != false) {
-        Succeeded = other.Succeeded;
+      if (other.Success != false) {
+        Success = other.Success;
       }
       if (other.Bytes.Length != 0) {
         Bytes = other.Bytes;
@@ -320,7 +320,7 @@ namespace IO {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Succeeded = input.ReadBool();
+            Success = input.ReadBool();
             break;
           }
           case 18: {
@@ -344,7 +344,7 @@ namespace IO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IO.IoReflection.Descriptor.MessageTypes[2]; }
+      get { return global::GIO.IoReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -501,7 +501,7 @@ namespace IO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IO.IoReflection.Descriptor.MessageTypes[3]; }
+      get { return global::GIO.IoReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -518,7 +518,7 @@ namespace IO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public WriteResponse(WriteResponse other) : this() {
-      succeeded_ = other.succeeded_;
+      success_ = other.success_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -527,14 +527,14 @@ namespace IO {
       return new WriteResponse(this);
     }
 
-    /// <summary>Field number for the "succeeded" field.</summary>
-    public const int SucceededFieldNumber = 1;
-    private bool succeeded_;
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Succeeded {
-      get { return succeeded_; }
+    public bool Success {
+      get { return success_; }
       set {
-        succeeded_ = value;
+        success_ = value;
       }
     }
 
@@ -551,14 +551,14 @@ namespace IO {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Succeeded != other.Succeeded) return false;
+      if (Success != other.Success) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Succeeded != false) hash ^= Succeeded.GetHashCode();
+      if (Success != false) hash ^= Success.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -572,9 +572,9 @@ namespace IO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Succeeded != false) {
+      if (Success != false) {
         output.WriteRawTag(8);
-        output.WriteBool(Succeeded);
+        output.WriteBool(Success);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -584,7 +584,7 @@ namespace IO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Succeeded != false) {
+      if (Success != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -598,8 +598,8 @@ namespace IO {
       if (other == null) {
         return;
       }
-      if (other.Succeeded != false) {
-        Succeeded = other.Succeeded;
+      if (other.Success != false) {
+        Success = other.Success;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -613,7 +613,7 @@ namespace IO {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Succeeded = input.ReadBool();
+            Success = input.ReadBool();
             break;
           }
         }

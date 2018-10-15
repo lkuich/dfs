@@ -4,6 +4,8 @@ using Grpc.Core;
 using GIO;
 using Dfs.Impl;
 using Newtonsoft.Json;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Dfs
 {
@@ -11,13 +13,16 @@ namespace Dfs
     {
         public string Host { get; private set; }
         public int Port { get; private set; }
+        public Guid Session { get; private set; }
 
         public File.FileClient FileClient { get; set; }
         public Directory.DirectoryClient DirectoryClient { get; set; }
+        public Remote.RemoteClient RemoteClient { get; set; }
         private Channel channel;
 
         public DfsClient(string file = "")
         {
+            Session = Guid.NewGuid();
             if (string.IsNullOrEmpty(file))
                 file = "dfs.json";
 
@@ -40,6 +45,7 @@ namespace Dfs
             this.channel = new Channel(this.Host, this.Port, ChannelCredentials.Insecure);
             FileClient = new File.FileClient(channel);
             DirectoryClient = new Directory.DirectoryClient(channel);
+            RemoteClient = new Remote.RemoteClient(channel);
         }
 
         public void Close()

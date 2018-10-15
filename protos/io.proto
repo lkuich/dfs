@@ -8,10 +8,6 @@ service Directory {
     rpc Exists (ReadRequest) returns (ReadResponse) {}
 }
 
-message StringResponse {
-    string value = 1;
-}
-
 service File {
     rpc ReadAllBytes (ReadRequest) returns (ReadResponse) {}
     rpc ReadAllLines (ReadRequest) returns (stream StringResponse) {}
@@ -19,7 +15,23 @@ service File {
     rpc WriteAllBytes (WriteRequest) returns (WriteResponse) {}
 }
 
+service Remote {
+}
+
 // Read
+message CallResponse {
+    string method = 1;
+    string args = 2;
+}
+
+message CallRequest {
+    string value = 1;
+}
+
+message StringResponse {
+    string value = 1;
+}
+
 message ReadRequest {
     string path = 1;
 }

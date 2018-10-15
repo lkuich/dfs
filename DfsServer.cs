@@ -46,7 +46,8 @@ namespace Dfs
             {
                 Services = {
                     Directory.BindService(new DirectoryImpl()),
-                    File.BindService(new FileImpl())
+                    File.BindService(new FileImpl()),
+                    Remote.BindService(new RemoteImpl())
                 },
                 Ports = { new ServerPort(Host, Port, ServerCredentials.Insecure) }
             };

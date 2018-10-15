@@ -303,5 +303,59 @@ namespace GIO {
     }
 
   }
+  public static partial class Remote
+  {
+    static readonly string __ServiceName = "GIO.Remote";
+
+
+    /// <summary>Service descriptor</summary>
+    public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
+    {
+      get { return global::GIO.IoReflection.Descriptor.Services[2]; }
+    }
+
+    /// <summary>Base class for server-side implementations of Remote</summary>
+    public abstract partial class RemoteBase
+    {
+    }
+
+    /// <summary>Client for Remote</summary>
+    public partial class RemoteClient : grpc::ClientBase<RemoteClient>
+    {
+      /// <summary>Creates a new client for Remote</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      public RemoteClient(grpc::Channel channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for Remote that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      public RemoteClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      protected RemoteClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      protected RemoteClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
+      }
+
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      protected override RemoteClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new RemoteClient(configuration);
+      }
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    public static grpc::ServerServiceDefinition BindService(RemoteBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder().Build();
+    }
+
+  }
 }
 #endregion

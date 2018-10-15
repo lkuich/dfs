@@ -6,7 +6,7 @@ using Dfs.Impl;
 
 namespace Dfs
 {
-    public static class IO
+    public static class DIO
     {
         public static DfsClient Client { get; set; }
 
@@ -20,6 +20,21 @@ namespace Dfs
             public static byte[] ReadAllBytes(string path)
             {
                 return Client.FileClient.ReadAllBytes(new ReadRequest() { Path = path }).Bytes.ToByteArray();
+            }
+
+            public static string[] ReadAllLines(string path)
+            {
+                var lines = new List<string>();
+                using (var request = Client.FileClient.ReadAllLines(new ReadRequest() { Path = path }))
+                {
+                    while (request.ResponseStream.MoveNext().Result)
+                    {
+                        var response = request.ResponseStream.Current;
+                        lines.Add(response.Value);
+                    }
+                }
+
+                return lines.ToArray();
             }
 
             public static bool Exists(string path)
@@ -38,11 +53,26 @@ namespace Dfs
                     while (request.ResponseStream.MoveNext().Result)
                     {
                         var response = request.ResponseStream.Current;
-                        files.Add(response.File);
+                        files.Add(response.Value);
                     }
                 }
 
                 return files.ToArray();
+            }
+
+            public static string[] GetDirectories(string path)
+            {
+                var dirs = new List<string>();
+                using (var request = Client.DirectoryClient.GetDirectories(new ReadRequest() { Path = path }))
+                {
+                    while (request.ResponseStream.MoveNext().Result)
+                    {
+                        var response = request.ResponseStream.Current;
+                        dirs.Add(response.Value);
+                    }
+                }
+
+                return dirs.ToArray();
             }
 
             public static bool Exists(string path)

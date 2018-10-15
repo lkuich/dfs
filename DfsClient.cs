@@ -15,7 +15,7 @@ namespace Dfs
         public Directory.DirectoryClient DirectoryClient { get; set; }
         private Channel channel;
 
-        public DfsClient(string host = "localhost", int port = 50051)
+        public DfsClient(string host, int port)
         {
             this.Host = host;
             this.Port = port;

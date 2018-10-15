@@ -12,7 +12,7 @@ namespace Dfs
         public int Port { get; private set; }
         private Server server;
         
-        public DfsServer(string host = "localhost", int port = 50051)
+        public DfsServer(string host, int port)
         {
             this.Host = host;
             this.Port = port;

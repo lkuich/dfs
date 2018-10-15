@@ -2,9 +2,9 @@
 
 namespace Dfs
 {
-    class Program
+    sealed class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string cmd = args[0].ToLower();
             if (cmd == "server") {
@@ -29,16 +29,11 @@ namespace Dfs
                 }
                 Console.WriteLine($"Started DFS client at: {host}:{port}");
 
-                var client = new DfsClient();
-                Dfs.IO.Client = client;
+                var client = new DfsClient(host, port);
+                DIO.Client = client;
 
-                // var bytes = client.ReadAllBytes("/home/aod/Documents/dfs/test.txt");
-                // client.WriteAllBytes("/home/aod/Desktop/test.txt", bytes);
-                
-                var res = Dfs.IO.Directory.GetFiles("/home/aod/Desktop");
-                foreach(var r in res) {
-                    Console.WriteLine(r);
-                }
+                var e = DIO.File.Exists("/home/aod/Desktop/test.txt");
+                Console.WriteLine(e);
             }
         }
     }

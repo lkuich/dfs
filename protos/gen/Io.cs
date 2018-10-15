@@ -24,23 +24,25 @@ namespace GIO {
     static IoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cghpby5wcm90bxIDR0lPIjIKEEdldEZpbGVzUmVzcG9uc2USDAoEZmlsZRgB",
-            "IAEoCRIQCghmaW5pc2hlZBgCIAEoCCIbCgtSZWFkUmVxdWVzdBIMCgRwYXRo",
-            "GAEgASgJIj8KDFJlYWRSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21l",
-            "c3NhZ2UYAiABKAkSDQoFYnl0ZXMYAyABKAwiKwoMV3JpdGVSZXF1ZXN0EgwK",
-            "BHBhdGgYASABKAkSDQoFYnl0ZXMYAiABKAwiMQoNV3JpdGVSZXNwb25zZRIP",
-            "CgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkydQoJRGlyZWN0b3J5",
-            "EjcKCEdldEZpbGVzEhAuR0lPLlJlYWRSZXF1ZXN0GhUuR0lPLkdldEZpbGVz",
-            "UmVzcG9uc2UiADABEi8KBkV4aXN0cxIQLkdJTy5SZWFkUmVxdWVzdBoRLkdJ",
-            "Ty5SZWFkUmVzcG9uc2UiADKoAQoERmlsZRI1CgxSZWFkQWxsQnl0ZXMSEC5H",
-            "SU8uUmVhZFJlcXVlc3QaES5HSU8uUmVhZFJlc3BvbnNlIgASLwoGRXhpc3Rz",
-            "EhAuR0lPLlJlYWRSZXF1ZXN0GhEuR0lPLlJlYWRSZXNwb25zZSIAEjgKDVdy",
-            "aXRlQWxsQnl0ZXMSES5HSU8uV3JpdGVSZXF1ZXN0GhIuR0lPLldyaXRlUmVz",
-            "cG9uc2UiAGIGcHJvdG8z"));
+            "Cghpby5wcm90bxIDR0lPIh8KDlN0cmluZ1Jlc3BvbnNlEg0KBXZhbHVlGAEg",
+            "ASgJIhsKC1JlYWRSZXF1ZXN0EgwKBHBhdGgYASABKAkiPwoMUmVhZFJlc3Bv",
+            "bnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRINCgVieXRl",
+            "cxgDIAEoDCIrCgxXcml0ZVJlcXVlc3QSDAoEcGF0aBgBIAEoCRINCgVieXRl",
+            "cxgCIAEoDCIxCg1Xcml0ZVJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoH",
+            "bWVzc2FnZRgCIAEoCTKwAQoJRGlyZWN0b3J5EjsKDkdldERpcmVjdG9yaWVz",
+            "EhAuR0lPLlJlYWRSZXF1ZXN0GhMuR0lPLlN0cmluZ1Jlc3BvbnNlIgAwARI1",
+            "CghHZXRGaWxlcxIQLkdJTy5SZWFkUmVxdWVzdBoTLkdJTy5TdHJpbmdSZXNw",
+            "b25zZSIAMAESLwoGRXhpc3RzEhAuR0lPLlJlYWRSZXF1ZXN0GhEuR0lPLlJl",
+            "YWRSZXNwb25zZSIAMuMBCgRGaWxlEjUKDFJlYWRBbGxCeXRlcxIQLkdJTy5S",
+            "ZWFkUmVxdWVzdBoRLkdJTy5SZWFkUmVzcG9uc2UiABI5CgxSZWFkQWxsTGlu",
+            "ZXMSEC5HSU8uUmVhZFJlcXVlc3QaEy5HSU8uU3RyaW5nUmVzcG9uc2UiADAB",
+            "Ei8KBkV4aXN0cxIQLkdJTy5SZWFkUmVxdWVzdBoRLkdJTy5SZWFkUmVzcG9u",
+            "c2UiABI4Cg1Xcml0ZUFsbEJ5dGVzEhEuR0lPLldyaXRlUmVxdWVzdBoSLkdJ",
+            "Ty5Xcml0ZVJlc3BvbnNlIgBiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.GetFilesResponse), global::GIO.GetFilesResponse.Parser, new[]{ "File", "Finished" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.StringResponse), global::GIO.StringResponse.Parser, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadRequest), global::GIO.ReadRequest.Parser, new[]{ "Path" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadResponse), global::GIO.ReadResponse.Parser, new[]{ "Success", "Message", "Bytes" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.WriteRequest), global::GIO.WriteRequest.Parser, new[]{ "Path", "Bytes" }, null, null, null),
@@ -51,11 +53,11 @@ namespace GIO {
 
   }
   #region Messages
-  public sealed partial class GetFilesResponse : pb::IMessage<GetFilesResponse> {
-    private static readonly pb::MessageParser<GetFilesResponse> _parser = new pb::MessageParser<GetFilesResponse>(() => new GetFilesResponse());
+  public sealed partial class StringResponse : pb::IMessage<StringResponse> {
+    private static readonly pb::MessageParser<StringResponse> _parser = new pb::MessageParser<StringResponse>(() => new StringResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GetFilesResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<StringResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -68,69 +70,55 @@ namespace GIO {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetFilesResponse() {
+    public StringResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetFilesResponse(GetFilesResponse other) : this() {
-      file_ = other.file_;
-      finished_ = other.finished_;
+    public StringResponse(StringResponse other) : this() {
+      value_ = other.value_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetFilesResponse Clone() {
-      return new GetFilesResponse(this);
+    public StringResponse Clone() {
+      return new StringResponse(this);
     }
 
-    /// <summary>Field number for the "file" field.</summary>
-    public const int FileFieldNumber = 1;
-    private string file_ = "";
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 1;
+    private string value_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string File {
-      get { return file_; }
+    public string Value {
+      get { return value_; }
       set {
-        file_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "finished" field.</summary>
-    public const int FinishedFieldNumber = 2;
-    private bool finished_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Finished {
-      get { return finished_; }
-      set {
-        finished_ = value;
+        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as GetFilesResponse);
+      return Equals(other as StringResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GetFilesResponse other) {
+    public bool Equals(StringResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (File != other.File) return false;
-      if (Finished != other.Finished) return false;
+      if (Value != other.Value) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (File.Length != 0) hash ^= File.GetHashCode();
-      if (Finished != false) hash ^= Finished.GetHashCode();
+      if (Value.Length != 0) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -144,13 +132,9 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (File.Length != 0) {
+      if (Value.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(File);
-      }
-      if (Finished != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(Finished);
+        output.WriteString(Value);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -160,11 +144,8 @@ namespace GIO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (File.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(File);
-      }
-      if (Finished != false) {
-        size += 1 + 1;
+      if (Value.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -173,15 +154,12 @@ namespace GIO {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GetFilesResponse other) {
+    public void MergeFrom(StringResponse other) {
       if (other == null) {
         return;
       }
-      if (other.File.Length != 0) {
-        File = other.File;
-      }
-      if (other.Finished != false) {
-        Finished = other.Finished;
+      if (other.Value.Length != 0) {
+        Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -195,11 +173,7 @@ namespace GIO {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            File = input.ReadString();
-            break;
-          }
-          case 16: {
-            Finished = input.ReadBool();
+            Value = input.ReadString();
             break;
           }
         }

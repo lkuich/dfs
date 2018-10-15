@@ -1,11 +1,12 @@
 using System;
 using Grpc.Core;
 using GIO;
-using Dfs.IO;
+using Dfs.Impl;
 
 namespace Dfs
 {
-    public class DfsServer {
+    public class DfsServer
+    {
         public bool ServerStarted { get; set; }
         public string Host { get; set; }
         public int Port { get; private set; }
@@ -21,6 +22,7 @@ namespace Dfs
             server = new Server
             {
                 Services = {
+                    Directory.BindService(new DirectoryImpl()),
                     File.BindService(new FileImpl())
                 },
                 Ports = { new ServerPort(Host, Port, ServerCredentials.Insecure) }

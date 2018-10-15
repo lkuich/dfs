@@ -8,6 +8,113 @@
 using grpc = global::Grpc.Core;
 
 namespace GIO {
+  public static partial class Directory
+  {
+    static readonly string __ServiceName = "GIO.Directory";
+
+    static readonly grpc::Marshaller<global::GIO.ReadRequest> __Marshaller_GIO_ReadRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GIO.ReadRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GIO.GetFilesResponse> __Marshaller_GIO_GetFilesResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GIO.GetFilesResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GIO.ReadResponse> __Marshaller_GIO_ReadResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GIO.ReadResponse.Parser.ParseFrom);
+
+    static readonly grpc::Method<global::GIO.ReadRequest, global::GIO.GetFilesResponse> __Method_GetFiles = new grpc::Method<global::GIO.ReadRequest, global::GIO.GetFilesResponse>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetFiles",
+        __Marshaller_GIO_ReadRequest,
+        __Marshaller_GIO_GetFilesResponse);
+
+    static readonly grpc::Method<global::GIO.ReadRequest, global::GIO.ReadResponse> __Method_Exists = new grpc::Method<global::GIO.ReadRequest, global::GIO.ReadResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "Exists",
+        __Marshaller_GIO_ReadRequest,
+        __Marshaller_GIO_ReadResponse);
+
+    /// <summary>Service descriptor</summary>
+    public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
+    {
+      get { return global::GIO.IoReflection.Descriptor.Services[0]; }
+    }
+
+    /// <summary>Base class for server-side implementations of Directory</summary>
+    public abstract partial class DirectoryBase
+    {
+      public virtual global::System.Threading.Tasks.Task GetFiles(global::GIO.ReadRequest request, grpc::IServerStreamWriter<global::GIO.GetFilesResponse> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::GIO.ReadResponse> Exists(global::GIO.ReadRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
+    /// <summary>Client for Directory</summary>
+    public partial class DirectoryClient : grpc::ClientBase<DirectoryClient>
+    {
+      /// <summary>Creates a new client for Directory</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      public DirectoryClient(grpc::Channel channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for Directory that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      public DirectoryClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      protected DirectoryClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      protected DirectoryClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
+      }
+
+      public virtual grpc::AsyncServerStreamingCall<global::GIO.GetFilesResponse> GetFiles(global::GIO.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetFiles(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GIO.GetFilesResponse> GetFiles(global::GIO.ReadRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetFiles, null, options, request);
+      }
+      public virtual global::GIO.ReadResponse Exists(global::GIO.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Exists(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::GIO.ReadResponse Exists(global::GIO.ReadRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Exists, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::GIO.ReadResponse> ExistsAsync(global::GIO.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ExistsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::GIO.ReadResponse> ExistsAsync(global::GIO.ReadRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_Exists, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      protected override DirectoryClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new DirectoryClient(configuration);
+      }
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    public static grpc::ServerServiceDefinition BindService(DirectoryBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_GetFiles, serviceImpl.GetFiles)
+          .AddMethod(__Method_Exists, serviceImpl.Exists).Build();
+    }
+
+  }
   public static partial class File
   {
     static readonly string __ServiceName = "GIO.File";
@@ -24,6 +131,13 @@ namespace GIO {
         __Marshaller_GIO_ReadRequest,
         __Marshaller_GIO_ReadResponse);
 
+    static readonly grpc::Method<global::GIO.ReadRequest, global::GIO.ReadResponse> __Method_Exists = new grpc::Method<global::GIO.ReadRequest, global::GIO.ReadResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "Exists",
+        __Marshaller_GIO_ReadRequest,
+        __Marshaller_GIO_ReadResponse);
+
     static readonly grpc::Method<global::GIO.WriteRequest, global::GIO.WriteResponse> __Method_WriteAllBytes = new grpc::Method<global::GIO.WriteRequest, global::GIO.WriteResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -34,13 +148,18 @@ namespace GIO {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::GIO.IoReflection.Descriptor.Services[0]; }
+      get { return global::GIO.IoReflection.Descriptor.Services[1]; }
     }
 
     /// <summary>Base class for server-side implementations of File</summary>
     public abstract partial class FileBase
     {
       public virtual global::System.Threading.Tasks.Task<global::GIO.ReadResponse> ReadAllBytes(global::GIO.ReadRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::GIO.ReadResponse> Exists(global::GIO.ReadRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -91,6 +210,22 @@ namespace GIO {
       {
         return CallInvoker.AsyncUnaryCall(__Method_ReadAllBytes, null, options, request);
       }
+      public virtual global::GIO.ReadResponse Exists(global::GIO.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Exists(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::GIO.ReadResponse Exists(global::GIO.ReadRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Exists, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::GIO.ReadResponse> ExistsAsync(global::GIO.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ExistsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::GIO.ReadResponse> ExistsAsync(global::GIO.ReadRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_Exists, null, options, request);
+      }
       public virtual global::GIO.WriteResponse WriteAllBytes(global::GIO.WriteRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return WriteAllBytes(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -120,6 +255,7 @@ namespace GIO {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_ReadAllBytes, serviceImpl.ReadAllBytes)
+          .AddMethod(__Method_Exists, serviceImpl.Exists)
           .AddMethod(__Method_WriteAllBytes, serviceImpl.WriteAllBytes).Build();
     }
 

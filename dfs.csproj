@@ -10,6 +10,7 @@
     <PackageReference Include="Grpc" Version="1.15.0" />
     <PackageReference Include="Grpc.Core" Version="1.15.0" />
     <PackageReference Include="Grpc.Tools" Version="1.15.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
 </Project>

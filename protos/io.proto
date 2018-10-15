@@ -1,9 +1,19 @@
 syntax = "proto3";
 
-package IO;
+package GIO;
+
+service Directory {
+    rpc GetFiles (ReadRequest) returns (stream GetFilesResponse) {}
+    rpc Exists (ReadRequest) returns (ReadResponse) {}
+}
+
+message GetFilesResponse {
+    string file = 1;
+}
 
 service File {
     rpc ReadAllBytes (ReadRequest) returns (ReadResponse) {}
+    rpc Exists (ReadRequest) returns (ReadResponse) {}
     rpc WriteAllBytes (WriteRequest) returns (WriteResponse) {}
 }
 
@@ -13,8 +23,9 @@ message ReadRequest {
 }
 
 message ReadResponse {
-    bool succeeded = 1;
-    bytes bytes = 2;
+    bool success = 1;
+    string message = 2;
+    bytes bytes = 3;
 }
 
 // Write
@@ -24,5 +35,6 @@ message WriteRequest {
 }
 
 message WriteResponse {
-    bool succeeded = 1;
+    bool success = 1;
+    string message = 2;
 }

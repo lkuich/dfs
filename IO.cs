@@ -1,38 +1,53 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Grpc.Core;
+using GIO;
+using Dfs.Impl;
 
-namespace Dfs.IO
+namespace Dfs
 {
-    public class FileImpl : GIO.File.FileBase
+    public static class IO
     {
-        public override async Task<GIO.WriteResponse> WriteAllBytes(GIO.WriteRequest request, ServerCallContext context)
+        public static DfsClient Client { get; set; }
+
+        public static class File
         {
-            Console.WriteLine("Writing to: " + request.Path);
-            
-            try {
-                System.IO.File.WriteAllBytes(request.Path, request.Bytes.ToByteArray());
-            } catch (Exception e) {
-                return new GIO.WriteResponse() { Message = e.Message, Success = false };
+            public static void WriteAllBytes(string path, byte[] bytes)
+            {
+                Client.FileClient.WriteAllBytes(new WriteRequest() { Path = path, Bytes = Google.Protobuf.ByteString.CopyFrom(bytes) });
             }
 
-            return new GIO.WriteResponse() { Success = true };
+            public static byte[] ReadAllBytes(string path)
+            {
+                return Client.FileClient.ReadAllBytes(new ReadRequest() { Path = path }).Bytes.ToByteArray();
+            }
+
+            public static bool Exists(string path)
+            {
+                return Client.FileClient.Exists(new ReadRequest() { Path = path }).Success;
+            }
         }
 
-        public override async Task<GIO.ReadResponse> ReadAllBytes(GIO.ReadRequest request, ServerCallContext context)
+        public static class Directory
         {
-            Console.WriteLine("Reading from: " + request.Path);
-            
-            try {
-                var bytes = Google.Protobuf.ByteString.CopyFrom(
-                    System.IO.File.ReadAllBytes(request.Path)
-                );
-                return new GIO.ReadResponse() { Bytes = bytes, Success = true };
-            } catch (Exception e) {
-                return new GIO.ReadResponse() { Message = e.Message, Success = false };    
+            public static string[] GetFiles(string path)
+            {
+                var files = new List<string>();
+                using (var request = Client.DirectoryClient.GetFiles(new ReadRequest() { Path = path }))
+                {
+                    while (request.ResponseStream.MoveNext().Result)
+                    {
+                        var response = request.ResponseStream.Current;
+                        files.Add(response.File);
+                    }
+                }
+
+                return files.ToArray();
+            }
+
+            public static bool Exists(string path)
+            {
+                return Client.DirectoryClient.Exists(new ReadRequest() { Path = path }).Success;
             }
         }
     }

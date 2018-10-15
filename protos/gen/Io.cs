@@ -24,26 +24,190 @@ namespace GIO {
     static IoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cghpby5wcm90bxIDR0lPIhsKC1JlYWRSZXF1ZXN0EgwKBHBhdGgYASABKAki",
-            "LgoMUmVhZFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDQoFYnl0ZXMYAiAB",
-            "KAwiKwoMV3JpdGVSZXF1ZXN0EgwKBHBhdGgYASABKAkSDQoFYnl0ZXMYAiAB",
-            "KAwiIAoNV3JpdGVSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIMncKBEZpbGUS",
-            "NQoMUmVhZEFsbEJ5dGVzEhAuR0lPLlJlYWRSZXF1ZXN0GhEuR0lPLlJlYWRS",
-            "ZXNwb25zZSIAEjgKDVdyaXRlQWxsQnl0ZXMSES5HSU8uV3JpdGVSZXF1ZXN0",
-            "GhIuR0lPLldyaXRlUmVzcG9uc2UiAGIGcHJvdG8z"));
+            "Cghpby5wcm90bxIDR0lPIjIKEEdldEZpbGVzUmVzcG9uc2USDAoEZmlsZRgB",
+            "IAEoCRIQCghmaW5pc2hlZBgCIAEoCCIbCgtSZWFkUmVxdWVzdBIMCgRwYXRo",
+            "GAEgASgJIj8KDFJlYWRSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21l",
+            "c3NhZ2UYAiABKAkSDQoFYnl0ZXMYAyABKAwiKwoMV3JpdGVSZXF1ZXN0EgwK",
+            "BHBhdGgYASABKAkSDQoFYnl0ZXMYAiABKAwiMQoNV3JpdGVSZXNwb25zZRIP",
+            "CgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkydQoJRGlyZWN0b3J5",
+            "EjcKCEdldEZpbGVzEhAuR0lPLlJlYWRSZXF1ZXN0GhUuR0lPLkdldEZpbGVz",
+            "UmVzcG9uc2UiADABEi8KBkV4aXN0cxIQLkdJTy5SZWFkUmVxdWVzdBoRLkdJ",
+            "Ty5SZWFkUmVzcG9uc2UiADKoAQoERmlsZRI1CgxSZWFkQWxsQnl0ZXMSEC5H",
+            "SU8uUmVhZFJlcXVlc3QaES5HSU8uUmVhZFJlc3BvbnNlIgASLwoGRXhpc3Rz",
+            "EhAuR0lPLlJlYWRSZXF1ZXN0GhEuR0lPLlJlYWRSZXNwb25zZSIAEjgKDVdy",
+            "aXRlQWxsQnl0ZXMSES5HSU8uV3JpdGVSZXF1ZXN0GhIuR0lPLldyaXRlUmVz",
+            "cG9uc2UiAGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.GetFilesResponse), global::GIO.GetFilesResponse.Parser, new[]{ "File", "Finished" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadRequest), global::GIO.ReadRequest.Parser, new[]{ "Path" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadResponse), global::GIO.ReadResponse.Parser, new[]{ "Success", "Bytes" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadResponse), global::GIO.ReadResponse.Parser, new[]{ "Success", "Message", "Bytes" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.WriteRequest), global::GIO.WriteRequest.Parser, new[]{ "Path", "Bytes" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.WriteResponse), global::GIO.WriteResponse.Parser, new[]{ "Success" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.WriteResponse), global::GIO.WriteResponse.Parser, new[]{ "Success", "Message" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
+  public sealed partial class GetFilesResponse : pb::IMessage<GetFilesResponse> {
+    private static readonly pb::MessageParser<GetFilesResponse> _parser = new pb::MessageParser<GetFilesResponse>(() => new GetFilesResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GetFilesResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GIO.IoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetFilesResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetFilesResponse(GetFilesResponse other) : this() {
+      file_ = other.file_;
+      finished_ = other.finished_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetFilesResponse Clone() {
+      return new GetFilesResponse(this);
+    }
+
+    /// <summary>Field number for the "file" field.</summary>
+    public const int FileFieldNumber = 1;
+    private string file_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string File {
+      get { return file_; }
+      set {
+        file_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "finished" field.</summary>
+    public const int FinishedFieldNumber = 2;
+    private bool finished_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Finished {
+      get { return finished_; }
+      set {
+        finished_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GetFilesResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GetFilesResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (File != other.File) return false;
+      if (Finished != other.Finished) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (File.Length != 0) hash ^= File.GetHashCode();
+      if (Finished != false) hash ^= Finished.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (File.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(File);
+      }
+      if (Finished != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Finished);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (File.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(File);
+      }
+      if (Finished != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GetFilesResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.File.Length != 0) {
+        File = other.File;
+      }
+      if (other.Finished != false) {
+        Finished = other.Finished;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            File = input.ReadString();
+            break;
+          }
+          case 16: {
+            Finished = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   /// Read
   /// </summary>
@@ -55,7 +219,7 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GIO.IoReflection.Descriptor.MessageTypes[0]; }
+      get { return global::GIO.IoReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -184,7 +348,7 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GIO.IoReflection.Descriptor.MessageTypes[1]; }
+      get { return global::GIO.IoReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -202,6 +366,7 @@ namespace GIO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ReadResponse(ReadResponse other) : this() {
       success_ = other.success_;
+      message_ = other.message_;
       bytes_ = other.bytes_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -222,8 +387,19 @@ namespace GIO {
       }
     }
 
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "bytes" field.</summary>
-    public const int BytesFieldNumber = 2;
+    public const int BytesFieldNumber = 3;
     private pb::ByteString bytes_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Bytes {
@@ -247,6 +423,7 @@ namespace GIO {
         return true;
       }
       if (Success != other.Success) return false;
+      if (Message != other.Message) return false;
       if (Bytes != other.Bytes) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -255,6 +432,7 @@ namespace GIO {
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (Bytes.Length != 0) hash ^= Bytes.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -273,8 +451,12 @@ namespace GIO {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
-      if (Bytes.Length != 0) {
+      if (Message.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
+      if (Bytes.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Bytes);
       }
       if (_unknownFields != null) {
@@ -287,6 +469,9 @@ namespace GIO {
       int size = 0;
       if (Success != false) {
         size += 1 + 1;
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
       if (Bytes.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Bytes);
@@ -304,6 +489,9 @@ namespace GIO {
       }
       if (other.Success != false) {
         Success = other.Success;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
       }
       if (other.Bytes.Length != 0) {
         Bytes = other.Bytes;
@@ -324,6 +512,10 @@ namespace GIO {
             break;
           }
           case 18: {
+            Message = input.ReadString();
+            break;
+          }
+          case 26: {
             Bytes = input.ReadBytes();
             break;
           }
@@ -344,7 +536,7 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GIO.IoReflection.Descriptor.MessageTypes[2]; }
+      get { return global::GIO.IoReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -501,7 +693,7 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GIO.IoReflection.Descriptor.MessageTypes[3]; }
+      get { return global::GIO.IoReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -519,6 +711,7 @@ namespace GIO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public WriteResponse(WriteResponse other) : this() {
       success_ = other.success_;
+      message_ = other.message_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -538,6 +731,17 @@ namespace GIO {
       }
     }
 
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as WriteResponse);
@@ -552,6 +756,7 @@ namespace GIO {
         return true;
       }
       if (Success != other.Success) return false;
+      if (Message != other.Message) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -559,6 +764,7 @@ namespace GIO {
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -576,6 +782,10 @@ namespace GIO {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -586,6 +796,9 @@ namespace GIO {
       int size = 0;
       if (Success != false) {
         size += 1 + 1;
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -601,6 +814,9 @@ namespace GIO {
       if (other.Success != false) {
         Success = other.Success;
       }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -614,6 +830,10 @@ namespace GIO {
             break;
           case 8: {
             Success = input.ReadBool();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
             break;
           }
         }

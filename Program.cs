@@ -8,29 +8,16 @@ namespace Dfs
         {
             string cmd = args[0].ToLower();
             if (cmd == "server") {
-                string host = "localhost";
-                int port = 50051;
-                if (args.Length >= 2) {
-                    host = args[1];
-                    port = int.Parse(args[2]);
-                }
-
-                var dfs = new DfsServer(host, port);
+                var dfs = new DfsServer();
                 dfs.Start();
 
-                Console.WriteLine($"Started DFS server at: {host}:{port}");
+                Console.WriteLine($"Started DFS server at: {dfs.Host}:{dfs.Port}");
                 Console.ReadLine();
             } else if (cmd == "client") {
-                string host = "localhost";
-                int port = 50051;
-                if (args.Length >= 2) {
-                    host = args[1];
-                    port = int.Parse(args[2]);
-                }
-                Console.WriteLine($"Started DFS client at: {host}:{port}");
-
                 var client = new DfsClient();
                 DIO.Client = client;
+                
+                Console.WriteLine($"Started DFS client at: {DIO.Client.Host}:{DIO.Client.Port}");
 
                 var e = DIO.File.Exists("/home/aod/Desktop/test.txt");
                 Console.WriteLine(e);

@@ -7,12 +7,6 @@ using Newtonsoft.Json;
 
 namespace Dfs
 {
-    class ClientConfig
-    {
-        public string Host { get; set; }
-        public int Port { get; set; }
-    }
-
     public class DfsClient
     {
         public string Host { get; private set; }
@@ -28,7 +22,7 @@ namespace Dfs
                 file = "dfs.json";
 
             var json = System.IO.File.ReadAllText(file);
-            var config = JsonConvert.DeserializeObject<ClientConfig>(json);
+            var config = JsonConvert.DeserializeObject<RemoteConfig>(json);
 
             Init(config.Host, config.Port);        
         }

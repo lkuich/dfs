@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package IO;
+
+service File {
+    rpc ReadAllBytes (ReadRequest) returns (ReadResponse) {}
+    rpc WriteAllBytes (WriteRequest) returns (WriteResponse) {}
+}
+
+// Read
+message ReadRequest {
+    string path = 1;
+}
+
+message ReadResponse {
+    bool succeeded = 1;
+    bytes bytes = 2;
+}
+
+// Write
+message WriteRequest {
+    string path = 1;
+    bytes bytes = 2;
+}
+
+message WriteResponse {
+    bool succeeded = 1;
+}

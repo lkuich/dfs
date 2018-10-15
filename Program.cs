@@ -6,11 +6,18 @@ namespace Dirt
     {
         static void Main(string[] args)
         {
-            var dfs = new DfsServer();
-            dfs.Start();
+            if (args[0] == "server") {
+                var dfs = new DfsServer();
+                dfs.Start();
 
-            Console.WriteLine("Started server...");
-            Console.ReadLine();
+                Console.WriteLine("Started server...");
+                Console.ReadLine();
+            } else {
+                
+
+                Console.WriteLine("Started client...");
+                Console.ReadLine();
+            }
         }
     }
 }

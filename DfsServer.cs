@@ -1,9 +1,9 @@
 using System;
 using Grpc.Core;
 using GIO;
-using Dirt.IO;
+using Dfs.IO;
 
-namespace Dirt
+namespace Dfs
 {
     public class DfsServer {
         public bool ServerStarted { get; set; }

@@ -29,7 +29,7 @@ namespace Dfs
                 }
                 Console.WriteLine($"Started DFS client at: {host}:{port}");
 
-                var client = new DfsClient(host, port);
+                var client = new DfsClient();
                 DIO.Client = client;
 
                 var e = DIO.File.Exists("/home/aod/Desktop/test.txt");

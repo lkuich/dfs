@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using Grpc.Core;
 using GIO;
 using Dfs.Impl;
+using Newtonsoft.Json;
 
 namespace Dfs
 {
+    class ClientConfig
+    {
+        public string Host { get; set; }
+        public int Port { get; set; }
+    }
+
     public class DfsClient
     {
         public string Host { get; private set; }
@@ -15,7 +22,23 @@ namespace Dfs
         public Directory.DirectoryClient DirectoryClient { get; set; }
         private Channel channel;
 
+        public DfsClient(string file = "")
+        {
+            if (string.IsNullOrEmpty(file))
+                file = "dfs.json";
+
+            var json = System.IO.File.ReadAllText(file);
+            var config = JsonConvert.DeserializeObject<ClientConfig>(json);
+
+            Init(config.Host, config.Port);        
+        }
+
         public DfsClient(string host, int port)
+        {
+            Init(host, port);
+        }
+
+        private void Init(string host, int port)
         {
             this.Host = host;
             this.Port = port;

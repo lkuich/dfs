@@ -48,6 +48,23 @@ namespace Dfs
             RemoteClient = new Remote.RemoteClient(channel);
         }
 
+        public void AwaitCommands()
+        {
+            using (var call = RemoteClient.Call())
+            {
+                var responseReaderTask = Task.Run(async () =>
+                {
+                    while (await call.ResponseStream.MoveNext())
+                    {
+                        var response = call.ResponseStream.Current;
+                        Console.WriteLine("Received " + response.Method);
+                    }
+                });
+                
+                call.RequestStream.WriteAsync(new CallRequest() { Method = "test" });
+            }
+        }
+
         public void Close()
         {
             channel.ShutdownAsync().Wait();

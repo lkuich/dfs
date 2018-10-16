@@ -16,6 +16,7 @@ service File {
 }
 
 service Remote {
+    rpc Call (stream CallRequest) returns (stream CallResponse) {}
 }
 
 // Read
@@ -25,7 +26,8 @@ message CallResponse {
 }
 
 message CallRequest {
-    string value = 1;
+    string method = 1;
+    string args = 2;
 }
 
 message StringResponse {

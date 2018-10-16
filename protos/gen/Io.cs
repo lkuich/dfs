@@ -25,27 +25,28 @@ namespace GIO {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cghpby5wcm90bxIDR0lPIiwKDENhbGxSZXNwb25zZRIOCgZtZXRob2QYASAB",
-            "KAkSDAoEYXJncxgCIAEoCSIcCgtDYWxsUmVxdWVzdBINCgV2YWx1ZRgBIAEo",
-            "CSIfCg5TdHJpbmdSZXNwb25zZRINCgV2YWx1ZRgBIAEoCSIbCgtSZWFkUmVx",
-            "dWVzdBIMCgRwYXRoGAEgASgJIj8KDFJlYWRSZXNwb25zZRIPCgdzdWNjZXNz",
-            "GAEgASgIEg8KB21lc3NhZ2UYAiABKAkSDQoFYnl0ZXMYAyABKAwiKwoMV3Jp",
-            "dGVSZXF1ZXN0EgwKBHBhdGgYASABKAkSDQoFYnl0ZXMYAiABKAwiMQoNV3Jp",
-            "dGVSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAky",
-            "sAEKCURpcmVjdG9yeRI7Cg5HZXREaXJlY3RvcmllcxIQLkdJTy5SZWFkUmVx",
-            "dWVzdBoTLkdJTy5TdHJpbmdSZXNwb25zZSIAMAESNQoIR2V0RmlsZXMSEC5H",
-            "SU8uUmVhZFJlcXVlc3QaEy5HSU8uU3RyaW5nUmVzcG9uc2UiADABEi8KBkV4",
-            "aXN0cxIQLkdJTy5SZWFkUmVxdWVzdBoRLkdJTy5SZWFkUmVzcG9uc2UiADLj",
-            "AQoERmlsZRI1CgxSZWFkQWxsQnl0ZXMSEC5HSU8uUmVhZFJlcXVlc3QaES5H",
-            "SU8uUmVhZFJlc3BvbnNlIgASOQoMUmVhZEFsbExpbmVzEhAuR0lPLlJlYWRS",
-            "ZXF1ZXN0GhMuR0lPLlN0cmluZ1Jlc3BvbnNlIgAwARIvCgZFeGlzdHMSEC5H",
-            "SU8uUmVhZFJlcXVlc3QaES5HSU8uUmVhZFJlc3BvbnNlIgASOAoNV3JpdGVB",
-            "bGxCeXRlcxIRLkdJTy5Xcml0ZVJlcXVlc3QaEi5HSU8uV3JpdGVSZXNwb25z",
-            "ZSIAMggKBlJlbW90ZWIGcHJvdG8z"));
+            "KAkSDAoEYXJncxgCIAEoCSIrCgtDYWxsUmVxdWVzdBIOCgZtZXRob2QYASAB",
+            "KAkSDAoEYXJncxgCIAEoCSIfCg5TdHJpbmdSZXNwb25zZRINCgV2YWx1ZRgB",
+            "IAEoCSIbCgtSZWFkUmVxdWVzdBIMCgRwYXRoGAEgASgJIj8KDFJlYWRSZXNw",
+            "b25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSDQoFYnl0",
+            "ZXMYAyABKAwiKwoMV3JpdGVSZXF1ZXN0EgwKBHBhdGgYASABKAkSDQoFYnl0",
+            "ZXMYAiABKAwiMQoNV3JpdGVSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8K",
+            "B21lc3NhZ2UYAiABKAkysAEKCURpcmVjdG9yeRI7Cg5HZXREaXJlY3Rvcmll",
+            "cxIQLkdJTy5SZWFkUmVxdWVzdBoTLkdJTy5TdHJpbmdSZXNwb25zZSIAMAES",
+            "NQoIR2V0RmlsZXMSEC5HSU8uUmVhZFJlcXVlc3QaEy5HSU8uU3RyaW5nUmVz",
+            "cG9uc2UiADABEi8KBkV4aXN0cxIQLkdJTy5SZWFkUmVxdWVzdBoRLkdJTy5S",
+            "ZWFkUmVzcG9uc2UiADLjAQoERmlsZRI1CgxSZWFkQWxsQnl0ZXMSEC5HSU8u",
+            "UmVhZFJlcXVlc3QaES5HSU8uUmVhZFJlc3BvbnNlIgASOQoMUmVhZEFsbExp",
+            "bmVzEhAuR0lPLlJlYWRSZXF1ZXN0GhMuR0lPLlN0cmluZ1Jlc3BvbnNlIgAw",
+            "ARIvCgZFeGlzdHMSEC5HSU8uUmVhZFJlcXVlc3QaES5HSU8uUmVhZFJlc3Bv",
+            "bnNlIgASOAoNV3JpdGVBbGxCeXRlcxIRLkdJTy5Xcml0ZVJlcXVlc3QaEi5H",
+            "SU8uV3JpdGVSZXNwb25zZSIAMjsKBlJlbW90ZRIxCgRDYWxsEhAuR0lPLkNh",
+            "bGxSZXF1ZXN0GhEuR0lPLkNhbGxSZXNwb25zZSIAKAEwAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.CallResponse), global::GIO.CallResponse.Parser, new[]{ "Method", "Args" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.CallRequest), global::GIO.CallRequest.Parser, new[]{ "Value" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.CallRequest), global::GIO.CallRequest.Parser, new[]{ "Method", "Args" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.StringResponse), global::GIO.StringResponse.Parser, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadRequest), global::GIO.ReadRequest.Parser, new[]{ "Path" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadResponse), global::GIO.ReadResponse.Parser, new[]{ "Success", "Message", "Bytes" }, null, null, null),
@@ -242,7 +243,8 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CallRequest(CallRequest other) : this() {
-      value_ = other.value_;
+      method_ = other.method_;
+      args_ = other.args_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -251,14 +253,25 @@ namespace GIO {
       return new CallRequest(this);
     }
 
-    /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 1;
-    private string value_ = "";
+    /// <summary>Field number for the "method" field.</summary>
+    public const int MethodFieldNumber = 1;
+    private string method_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Value {
-      get { return value_; }
+    public string Method {
+      get { return method_; }
       set {
-        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        method_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "args" field.</summary>
+    public const int ArgsFieldNumber = 2;
+    private string args_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Args {
+      get { return args_; }
+      set {
+        args_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -275,14 +288,16 @@ namespace GIO {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Value != other.Value) return false;
+      if (Method != other.Method) return false;
+      if (Args != other.Args) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Value.Length != 0) hash ^= Value.GetHashCode();
+      if (Method.Length != 0) hash ^= Method.GetHashCode();
+      if (Args.Length != 0) hash ^= Args.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -296,9 +311,13 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Value.Length != 0) {
+      if (Method.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Value);
+        output.WriteString(Method);
+      }
+      if (Args.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Args);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -308,8 +327,11 @@ namespace GIO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Value.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
+      if (Method.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Method);
+      }
+      if (Args.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Args);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -322,8 +344,11 @@ namespace GIO {
       if (other == null) {
         return;
       }
-      if (other.Value.Length != 0) {
-        Value = other.Value;
+      if (other.Method.Length != 0) {
+        Method = other.Method;
+      }
+      if (other.Args.Length != 0) {
+        Args = other.Args;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -337,7 +362,11 @@ namespace GIO {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Value = input.ReadString();
+            Method = input.ReadString();
+            break;
+          }
+          case 18: {
+            Args = input.ReadString();
             break;
           }
         }

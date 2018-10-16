@@ -307,6 +307,15 @@ namespace GIO {
   {
     static readonly string __ServiceName = "GIO.Remote";
 
+    static readonly grpc::Marshaller<global::GIO.CallRequest> __Marshaller_GIO_CallRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GIO.CallRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GIO.CallResponse> __Marshaller_GIO_CallResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GIO.CallResponse.Parser.ParseFrom);
+
+    static readonly grpc::Method<global::GIO.CallRequest, global::GIO.CallResponse> __Method_Call = new grpc::Method<global::GIO.CallRequest, global::GIO.CallResponse>(
+        grpc::MethodType.DuplexStreaming,
+        __ServiceName,
+        "Call",
+        __Marshaller_GIO_CallRequest,
+        __Marshaller_GIO_CallResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -317,6 +326,11 @@ namespace GIO {
     /// <summary>Base class for server-side implementations of Remote</summary>
     public abstract partial class RemoteBase
     {
+      public virtual global::System.Threading.Tasks.Task Call(grpc::IAsyncStreamReader<global::GIO.CallRequest> requestStream, grpc::IServerStreamWriter<global::GIO.CallResponse> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Client for Remote</summary>
@@ -342,6 +356,14 @@ namespace GIO {
       {
       }
 
+      public virtual grpc::AsyncDuplexStreamingCall<global::GIO.CallRequest, global::GIO.CallResponse> Call(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Call(new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncDuplexStreamingCall<global::GIO.CallRequest, global::GIO.CallResponse> Call(grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncDuplexStreamingCall(__Method_Call, null, options);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override RemoteClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -353,7 +375,8 @@ namespace GIO {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static grpc::ServerServiceDefinition BindService(RemoteBase serviceImpl)
     {
-      return grpc::ServerServiceDefinition.CreateBuilder().Build();
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_Call, serviceImpl.Call).Build();
     }
 
   }

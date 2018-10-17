@@ -28,6 +28,7 @@ namespace Dfs.Impl
                 var req = requestStream.Current;
                 if (!Responses.Select(r => r.SessionId).Contains(req.SessionId))
                 {
+                    Console.WriteLine($"Adding {req.SessionId}...");
                     Responses.Add(new ResponseItem() {
                         Stream = responseStream,
                         SessionId = req.SessionId
@@ -36,6 +37,7 @@ namespace Dfs.Impl
                 else
                 {
                     foreach (var r in Responses) {
+                        Console.WriteLine($"Broadcasting {req.Args}");
                         await r.Stream.WriteAsync(new CallResponse() {
                             Args = req.Args
                         });

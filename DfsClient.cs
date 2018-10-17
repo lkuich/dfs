@@ -37,6 +37,9 @@ namespace Dfs
             Init(host, port);
         }
 
+        private AsyncDuplexStreamingCall<CallRequest, CallResponse> RemoteCall { get; set; }
+        public virtual void RemoteTask(string[] args) {}
+
         private void Init(string host, int port)
         {
             this.Host = host;
@@ -46,23 +49,32 @@ namespace Dfs
             FileClient = new File.FileClient(channel);
             DirectoryClient = new Directory.DirectoryClient(channel);
             RemoteClient = new Remote.RemoteClient(channel);
+
+            RemoteCall = RemoteClient.Call();
+
+            AwaitRemote();
         }
 
-        public void AwaitCommands()
+        public void AwaitRemote()
         {
-            using (var call = RemoteClient.Call())
+            var responseReaderTask = Task.Run(async () =>
             {
-                var responseReaderTask = Task.Run(async () =>
+                while (await RemoteCall.ResponseStream.MoveNext())
                 {
-                    while (await call.ResponseStream.MoveNext())
-                    {
-                        var response = call.ResponseStream.Current;
-                        Console.WriteLine("Received " + response.Method);
-                    }
-                });
-                
-                call.RequestStream.WriteAsync(new CallRequest() { Method = "test" });
-            }
+                    var response = RemoteCall.ResponseStream.Current;
+                    RemoteTask(response.Args.Split(" "));
+                }
+            });
+        }
+
+        public async Task RegisterRemote()
+        {
+            await RemoteCall.RequestStream.WriteAsync(new CallRequest() { SessionId = Session.ToString() });
+        }
+
+        public async Task CallRemote(string args)
+        {
+            await RemoteCall.RequestStream.WriteAsync(new CallRequest() { SessionId = Session.ToString(), Args = args });
         }
 
         public void Close()

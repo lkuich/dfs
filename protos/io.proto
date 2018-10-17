@@ -21,12 +21,12 @@ service Remote {
 
 // Read
 message CallResponse {
-    string method = 1;
+    string sessionId = 1;
     string args = 2;
 }
 
 message CallRequest {
-    string method = 1;
+    string sessionId = 1;
     string args = 2;
 }
 

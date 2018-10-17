@@ -24,29 +24,30 @@ namespace GIO {
     static IoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cghpby5wcm90bxIDR0lPIiwKDENhbGxSZXNwb25zZRIOCgZtZXRob2QYASAB",
-            "KAkSDAoEYXJncxgCIAEoCSIrCgtDYWxsUmVxdWVzdBIOCgZtZXRob2QYASAB",
-            "KAkSDAoEYXJncxgCIAEoCSIfCg5TdHJpbmdSZXNwb25zZRINCgV2YWx1ZRgB",
-            "IAEoCSIbCgtSZWFkUmVxdWVzdBIMCgRwYXRoGAEgASgJIj8KDFJlYWRSZXNw",
-            "b25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSDQoFYnl0",
-            "ZXMYAyABKAwiKwoMV3JpdGVSZXF1ZXN0EgwKBHBhdGgYASABKAkSDQoFYnl0",
-            "ZXMYAiABKAwiMQoNV3JpdGVSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8K",
-            "B21lc3NhZ2UYAiABKAkysAEKCURpcmVjdG9yeRI7Cg5HZXREaXJlY3Rvcmll",
-            "cxIQLkdJTy5SZWFkUmVxdWVzdBoTLkdJTy5TdHJpbmdSZXNwb25zZSIAMAES",
-            "NQoIR2V0RmlsZXMSEC5HSU8uUmVhZFJlcXVlc3QaEy5HSU8uU3RyaW5nUmVz",
-            "cG9uc2UiADABEi8KBkV4aXN0cxIQLkdJTy5SZWFkUmVxdWVzdBoRLkdJTy5S",
-            "ZWFkUmVzcG9uc2UiADLjAQoERmlsZRI1CgxSZWFkQWxsQnl0ZXMSEC5HSU8u",
-            "UmVhZFJlcXVlc3QaES5HSU8uUmVhZFJlc3BvbnNlIgASOQoMUmVhZEFsbExp",
-            "bmVzEhAuR0lPLlJlYWRSZXF1ZXN0GhMuR0lPLlN0cmluZ1Jlc3BvbnNlIgAw",
-            "ARIvCgZFeGlzdHMSEC5HSU8uUmVhZFJlcXVlc3QaES5HSU8uUmVhZFJlc3Bv",
-            "bnNlIgASOAoNV3JpdGVBbGxCeXRlcxIRLkdJTy5Xcml0ZVJlcXVlc3QaEi5H",
-            "SU8uV3JpdGVSZXNwb25zZSIAMjsKBlJlbW90ZRIxCgRDYWxsEhAuR0lPLkNh",
-            "bGxSZXF1ZXN0GhEuR0lPLkNhbGxSZXNwb25zZSIAKAEwAWIGcHJvdG8z"));
+            "Cghpby5wcm90bxIDR0lPIi8KDENhbGxSZXNwb25zZRIRCglzZXNzaW9uSWQY",
+            "ASABKAkSDAoEYXJncxgCIAEoCSIuCgtDYWxsUmVxdWVzdBIRCglzZXNzaW9u",
+            "SWQYASABKAkSDAoEYXJncxgCIAEoCSIfCg5TdHJpbmdSZXNwb25zZRINCgV2",
+            "YWx1ZRgBIAEoCSIbCgtSZWFkUmVxdWVzdBIMCgRwYXRoGAEgASgJIj8KDFJl",
+            "YWRSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkS",
+            "DQoFYnl0ZXMYAyABKAwiKwoMV3JpdGVSZXF1ZXN0EgwKBHBhdGgYASABKAkS",
+            "DQoFYnl0ZXMYAiABKAwiMQoNV3JpdGVSZXNwb25zZRIPCgdzdWNjZXNzGAEg",
+            "ASgIEg8KB21lc3NhZ2UYAiABKAkysAEKCURpcmVjdG9yeRI7Cg5HZXREaXJl",
+            "Y3RvcmllcxIQLkdJTy5SZWFkUmVxdWVzdBoTLkdJTy5TdHJpbmdSZXNwb25z",
+            "ZSIAMAESNQoIR2V0RmlsZXMSEC5HSU8uUmVhZFJlcXVlc3QaEy5HSU8uU3Ry",
+            "aW5nUmVzcG9uc2UiADABEi8KBkV4aXN0cxIQLkdJTy5SZWFkUmVxdWVzdBoR",
+            "LkdJTy5SZWFkUmVzcG9uc2UiADLjAQoERmlsZRI1CgxSZWFkQWxsQnl0ZXMS",
+            "EC5HSU8uUmVhZFJlcXVlc3QaES5HSU8uUmVhZFJlc3BvbnNlIgASOQoMUmVh",
+            "ZEFsbExpbmVzEhAuR0lPLlJlYWRSZXF1ZXN0GhMuR0lPLlN0cmluZ1Jlc3Bv",
+            "bnNlIgAwARIvCgZFeGlzdHMSEC5HSU8uUmVhZFJlcXVlc3QaES5HSU8uUmVh",
+            "ZFJlc3BvbnNlIgASOAoNV3JpdGVBbGxCeXRlcxIRLkdJTy5Xcml0ZVJlcXVl",
+            "c3QaEi5HSU8uV3JpdGVSZXNwb25zZSIAMjsKBlJlbW90ZRIxCgRDYWxsEhAu",
+            "R0lPLkNhbGxSZXF1ZXN0GhEuR0lPLkNhbGxSZXNwb25zZSIAKAEwAWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.CallResponse), global::GIO.CallResponse.Parser, new[]{ "Method", "Args" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.CallRequest), global::GIO.CallRequest.Parser, new[]{ "Method", "Args" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.CallResponse), global::GIO.CallResponse.Parser, new[]{ "SessionId", "Args" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GIO.CallRequest), global::GIO.CallRequest.Parser, new[]{ "SessionId", "Args" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.StringResponse), global::GIO.StringResponse.Parser, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadRequest), global::GIO.ReadRequest.Parser, new[]{ "Path" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GIO.ReadResponse), global::GIO.ReadResponse.Parser, new[]{ "Success", "Message", "Bytes" }, null, null, null),
@@ -86,7 +87,7 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CallResponse(CallResponse other) : this() {
-      method_ = other.method_;
+      sessionId_ = other.sessionId_;
       args_ = other.args_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -96,14 +97,14 @@ namespace GIO {
       return new CallResponse(this);
     }
 
-    /// <summary>Field number for the "method" field.</summary>
-    public const int MethodFieldNumber = 1;
-    private string method_ = "";
+    /// <summary>Field number for the "sessionId" field.</summary>
+    public const int SessionIdFieldNumber = 1;
+    private string sessionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Method {
-      get { return method_; }
+    public string SessionId {
+      get { return sessionId_; }
       set {
-        method_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        sessionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -131,7 +132,7 @@ namespace GIO {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Method != other.Method) return false;
+      if (SessionId != other.SessionId) return false;
       if (Args != other.Args) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -139,7 +140,7 @@ namespace GIO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Method.Length != 0) hash ^= Method.GetHashCode();
+      if (SessionId.Length != 0) hash ^= SessionId.GetHashCode();
       if (Args.Length != 0) hash ^= Args.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -154,9 +155,9 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Method.Length != 0) {
+      if (SessionId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Method);
+        output.WriteString(SessionId);
       }
       if (Args.Length != 0) {
         output.WriteRawTag(18);
@@ -170,8 +171,8 @@ namespace GIO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Method.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Method);
+      if (SessionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SessionId);
       }
       if (Args.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Args);
@@ -187,8 +188,8 @@ namespace GIO {
       if (other == null) {
         return;
       }
-      if (other.Method.Length != 0) {
-        Method = other.Method;
+      if (other.SessionId.Length != 0) {
+        SessionId = other.SessionId;
       }
       if (other.Args.Length != 0) {
         Args = other.Args;
@@ -205,7 +206,7 @@ namespace GIO {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Method = input.ReadString();
+            SessionId = input.ReadString();
             break;
           }
           case 18: {
@@ -243,7 +244,7 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CallRequest(CallRequest other) : this() {
-      method_ = other.method_;
+      sessionId_ = other.sessionId_;
       args_ = other.args_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -253,14 +254,14 @@ namespace GIO {
       return new CallRequest(this);
     }
 
-    /// <summary>Field number for the "method" field.</summary>
-    public const int MethodFieldNumber = 1;
-    private string method_ = "";
+    /// <summary>Field number for the "sessionId" field.</summary>
+    public const int SessionIdFieldNumber = 1;
+    private string sessionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Method {
-      get { return method_; }
+    public string SessionId {
+      get { return sessionId_; }
       set {
-        method_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        sessionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -288,7 +289,7 @@ namespace GIO {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Method != other.Method) return false;
+      if (SessionId != other.SessionId) return false;
       if (Args != other.Args) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -296,7 +297,7 @@ namespace GIO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Method.Length != 0) hash ^= Method.GetHashCode();
+      if (SessionId.Length != 0) hash ^= SessionId.GetHashCode();
       if (Args.Length != 0) hash ^= Args.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -311,9 +312,9 @@ namespace GIO {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Method.Length != 0) {
+      if (SessionId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Method);
+        output.WriteString(SessionId);
       }
       if (Args.Length != 0) {
         output.WriteRawTag(18);
@@ -327,8 +328,8 @@ namespace GIO {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Method.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Method);
+      if (SessionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SessionId);
       }
       if (Args.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Args);
@@ -344,8 +345,8 @@ namespace GIO {
       if (other == null) {
         return;
       }
-      if (other.Method.Length != 0) {
-        Method = other.Method;
+      if (other.SessionId.Length != 0) {
+        SessionId = other.SessionId;
       }
       if (other.Args.Length != 0) {
         Args = other.Args;
@@ -362,7 +363,7 @@ namespace GIO {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Method = input.ReadString();
+            SessionId = input.ReadString();
             break;
           }
           case 18: {

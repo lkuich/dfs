@@ -46,6 +46,8 @@ namespace Dfs
                         }
                     });
                     
+                    Console.ReadLine();
+                    call.RequestStream.WriteAsync(new CallRequest() { Method = "c" });
                     while(true) {
                         Console.ReadLine();
                         call.RequestStream.WriteAsync(new CallRequest() { Method = "test" });

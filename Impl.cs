@@ -10,28 +10,26 @@ namespace Dfs.Impl
 {
     public class RemoteImpl : GIO.Remote.RemoteBase
     {
-        public List<IAsyncStreamReader<CallRequest>> Requests { get; private set; }
         public List<IServerStreamWriter<CallResponse>> Responses { get; private set; }
         public RemoteImpl()
         {
-            Requests = new List<IAsyncStreamReader<CallRequest>>();
+            Responses = new List<IServerStreamWriter<CallResponse>>();
         }
         public override async Task Call(IAsyncStreamReader<CallRequest> requestStream, IServerStreamWriter<CallResponse> responseStream, ServerCallContext context)
         {
-            Console.WriteLine(Requests.Count);
-            Requests.Add(requestStream);
-            Responses.Add(responseStream);
-            for (int i = 0; i < Requests.Count; i++) {
-                var request = Requests.ElementAt(i);
-                while (await request.MoveNext())
-                {
-                    var req = request.Current;
-                    Console.WriteLine(req.Method);
-
-                    await Responses.ElementAt(i).WriteAsync(new CallResponse() {
-                        Method = req.Method,
-                        Args = req.Args
-                    });
+            while (await requestStream.MoveNext())
+            {
+                var req = requestStream.Current;
+                if (req.Method == "c") { // TODO: Use sessionId from call request to register client
+                    // Get added to the response stream list
+                    Responses.Add(responseStream);
+                } else {
+                    foreach (var r in Responses) {
+                        await r.WriteAsync(new CallResponse() {
+                            Method = req.Method,
+                            Args = req.Args
+                        });
+                    }
                 }
             }
         }
